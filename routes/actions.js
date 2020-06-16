@@ -39,6 +39,13 @@ const validateAction = (req, res, next) => {
     next()
 }
 
+//test
+router.get('/count', (req, res) => {
+    Data.get().then(action => {
+        res.status(200).json(action.length);
+    })
+})
+
 router.get('/', (req, res) => {
     Data.get()
         .then(action => { res.status(200).json(action) })
